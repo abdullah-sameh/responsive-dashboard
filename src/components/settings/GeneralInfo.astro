@@ -1,0 +1,70 @@
+<section class='general-info'>
+  <header>
+    <h2>general info</h2>
+    <p>General Information About Your Account</p>
+  </header>
+  <form>
+    <label for='first-name'>first name</label>
+    <input type='text' name='first-name' placeholder='first name' />
+
+    <label for='last-name'>last name</label>
+    <input type='text' name='last-name' placeholder='last name' />
+
+    <label for='email'>email</label>
+    <input
+      type='email'
+      name='email'
+      disabled
+      placeholder='email'
+      value='mohsen@hekho.ok'
+      disabled
+    />
+
+    <a href='#'>change</a>
+  </form>
+</section>
+
+<style>
+  .general-info {
+    display: grid;
+    gap: 15px;
+  }
+  .general-info form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    text-transform: capitalize;
+  }
+  .general-info form input {
+    width: calc(100% - 20px); /* 20px padding of section */
+    grid-column: 1/3;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    text-transform: capitalize;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .general-info form label {
+    color: var(--second-font-color);
+    font-size: 14px;
+  }
+  .general-info form input:last-of-type {
+    grid-column: 1/2;
+    color: var(--second-font-color);
+    background: var(--second-bg);
+    cursor: not-allowed;
+  }
+  .general-info a {
+    grid-column: 2/3;
+    cursor: pointer;
+    align-self: center;
+    font-family: inherit;
+    color: var(--blue);
+    text-transform: capitalize;
+  }
+</style>

@@ -1,0 +1,32 @@
+<section>
+  <header>
+    <h2>quick draft</h2>
+    <p>write a draft for your ideas</p>
+  </header>
+  <input type='text' placeholder='Title' class='border-radius' />
+  <textarea placeholder='Your Thought' class='border-radius'></textarea>
+  <button class='border-radius'>save</button>
+</section>
+
+<style>
+  section {
+    display: grid;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  p {
+    color: var(--second-font-color);
+  }
+  input,
+  textarea {
+    background-color: var(--third-bg);
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+  }
+  textarea {
+    min-height: 180px;
+    resize: none;
+    overflow-wrap: break-word;
+  }
+</style>

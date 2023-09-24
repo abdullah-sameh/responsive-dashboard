@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro'
+import * as files from '../content/files.md'
+---
+
+<Layout title='files'>
+  <div class='container'>
+    <section class='statistics'>
+      <h2>files statistics</h2>
+      <div>
+        <i class='material-icons'>picture_as_pdf</i>
+        <div>
+          <h2>PDF files</h2>
+          <p>130</p>
+        </div>
+        <p>6.5GB</p>
+      </div>
+      <div>
+        <i class='material-icons'>image</i>
+        <div>
+          <h2>image files</h2>
+          <p>230</p>
+        </div>
+        <p>10.5GB</p>
+      </div>
+      <div>
+        <i class='fas fa-file-word'></i>
+        <div>
+          <h2>word files</h2>
+          <p>130</p>
+        </div>
+        <p>6.5GB</p>
+      </div>
+      <div>
+        <i class='fas fa-file-csv'></i>
+        <div>
+          <h2>csv files</h2>
+          <p>130</p>
+        </div>
+        <p>6.5GB</p>
+      </div>
+      <button>
+        <i class='material-icons'>keyboard_double_arrow_up</i>
+         upload
+      </button>
+    </section>
+
+    <div id='container' class='container'>
+      {
+        [...Array(20)].map((_, i) => (
+          <section>
+            <i class='material-icons'>download</i>
+            <header>
+              <img
+                src={`/files/${
+                  files.frontmatter.fileTypes[Math.floor(Math.random() * 3)]
+                }.svg`}
+                alt=''
+              />
+              <h2>
+                my-file.
+                {files.frontmatter.fileTypes[Math.floor(Math.random() * 3)]}
+              </h2>
+            </header>
+            <p>{files.frontmatter.names[Math.floor(Math.random() * 3)]}</p>
+            <footer>
+              <p>{`${i + 1}/5/2021`}</p>
+              <p>{`1${i}0.3`}MB</p>
+            </footer>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<style>
+  #container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  img {
+    width: 80px;
+    transition: var(--time-trannsition);
+    -webkit-transition: var(--time-trannsition);
+    -moz-transition: var(--time-trannsition);
+    -ms-transition: var(--time-trannsition);
+    -o-transition: var(--time-trannsition);
+  }
+  .statistics {
+    float: right;
+    margin-left: 20px;
+    background: var(--main-bg);
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    min-width: 220px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  @media only screen and (max-width: 590px) {
+    .statistics {
+      float: none;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+  .statistics > h2 {
+    text-transform: capitalize;
+  }
+  .statistics > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--third-bg);
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .statistics > div > i {
+    width: 50px;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    font-size: 20px;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.8) 100%
+    );
+  }
+  .statistics > div:nth-of-type(1) > i {
+    color: var(--blue);
+    background-color: var(--blue);
+  }
+  .statistics > div:nth-of-type(2) > i {
+    color: var(--green);
+    background-color: var(--green);
+  }
+  .statistics > div:nth-of-type(3) > i {
+    color: var(--red);
+    background-color: var(--red);
+  }
+  .statistics > div:nth-of-type(4) > i {
+    color: var(--orange);
+    background-color: var(--orange);
+  }
+  .statistics > div > p {
+    flex-grow: 1;
+    text-align: end;
+  }
+  .statistics > div > div > h2 {
+    font-size: 16px;
+  }
+  .statistics > div p {
+    color: var(--second-font-color);
+    font-size: 14px;
+  }
+  .statistics > button {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+    background: var(--blue);
+    color: #fff;
+    padding: 10px;
+    text-transform: capitalize;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  #container > section {
+    padding: 10px;
+  }
+  #container > section > i {
+    color: var(--second-font-color);
+  }
+  #container > section > header {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+  }
+  #container > section:hover > header > img {
+    transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+  }
+  #container > section > header > h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  #container > section > p {
+    color: var(--second-font-color);
+    text-transform: capitalize;
+    padding-bottom: 10px;
+  }
+  #container > section > footer {
+    display: flex;
+    justify-content: space-between;
+    color: var(--second-font-color);
+    padding-top: 10px;
+    border-top: 1px solid var(--third-bg);
+  }
+</style>

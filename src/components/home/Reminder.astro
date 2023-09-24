@@ -1,0 +1,89 @@
+<section class='reminder'>
+  <header>
+    <h2>reminder</h2>
+  </header>
+  <div class='content'>
+    <section>
+      <h2>check my tasks list</h2>
+      <p>28/09/2022 - 12:00am</p>
+    </section>
+    <section>
+      <h2>Check My Projects</h2>
+      <p>28/09/2022 - 12:00am</p>
+    </section>
+    <section>
+      <h2>Call All My Clients</h2>
+      <p>05/11/2022 - 12:00am</p>
+    </section>
+    <section>
+      <h2>Finish The Development Workshop</h2>
+      <p>20/12/2022 - 12:00am</p>
+    </section>
+  </div>
+</section>
+
+<style>
+  .reminder {
+    display: grid;
+    gap: 15px;
+  }
+  .reminder > .content {
+    display: grid;
+    gap: 20px;
+  }
+  .reminder > div > section {
+    padding-left: 50px;
+    position: relative;
+  }
+  .reminder > div > section::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+  .reminder > div > section::after {
+    content: '';
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35px;
+  }
+  .reminder > div > section:nth-of-type(1)::after,
+  .reminder > div > section:nth-of-type(1)::before {
+    background-color: var(--blue);
+  }
+  .reminder > div > section:nth-of-type(2)::after,
+  .reminder > div > section:nth-of-type(2)::before {
+    background-color: var(--green);
+  }
+  .reminder > div > section:nth-of-type(3)::after,
+  .reminder > div > section:nth-of-type(3)::before {
+    background-color: var(--orange);
+  }
+  .reminder > div > section:nth-of-type(4)::after,
+  .reminder > div > section:nth-of-type(4)::before {
+    background-color: var(--red);
+  }
+  .reminder > div > section > h2 {
+    text-transform: capitalize;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .reminder > div > section > p {
+    font-size: 14px;
+    color: var(--second-font-color);
+  }
+</style>

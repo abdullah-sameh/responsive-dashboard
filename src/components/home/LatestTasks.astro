@@ -1,0 +1,72 @@
+<section class='latest-tasks'>
+  <header><h2>latest tasks</h2></header>
+  <section>
+    <h2>record one new video</h2>
+    <p>record python create exe project</p>
+    <i class='material-icons'>delete</i>
+  </section>
+  <section>
+    <h2>write article</h2>
+    <p>Write Low Level vs High Level Languages</p>
+    <i class='material-icons'>delete</i>
+  </section>
+  <section>
+    <h2>finish project</h2>
+    <p>Publish Academy Programming Project</p>
+    <i class='material-icons'>delete</i>
+  </section>
+  <section aria-disabled='true'>
+    <h2>attend the meeting</h2>
+    <p>Attend The Project Business Analysis Meeting</p>
+    <i class='material-icons'>delete</i>
+  </section>
+  <section>
+    <h2>record one new video</h2>
+    <p>Finish Teaching Flex Box</p>
+    <i class='material-icons'>delete</i>
+  </section>
+</section>
+
+<style>
+  .latest-tasks > section {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    border-bottom: 1px solid var(--third-bg);
+  }
+  .latest-tasks > section > h2 {
+    text-transform: capitalize;
+    font-size: 16px;
+  }
+  .latest-tasks > section > p {
+    text-transform: capitalize;
+    font-size: 14px;
+    color: var(--second-font-color);
+    grid-column: 1/2;
+  }
+  .latest-tasks > section > i {
+    justify-self: end;
+    margin-top: -20px;
+    cursor: pointer;
+    transition: var(--time-trannsition);
+    -webkit-transition: var(--time-trannsition);
+    -moz-transition: var(--time-trannsition);
+    -ms-transition: var(--time-trannsition);
+    -o-transition: var(--time-trannsition);
+  }
+  .latest-tasks > section > i:hover {
+    color: red;
+  }
+  .latest-tasks > section:nth-last-child(2) {
+    opacity: 0.2;
+  }
+  .latest-tasks > section:nth-last-child(2) > i:hover {
+    color: initial;
+  }
+  .latest-tasks > section:nth-last-child(2) > h2 {
+    text-decoration: line-through;
+  }
+  .latest-tasks > section:nth-last-child(2) > p {
+    text-decoration: line-through;
+  }
+</style>

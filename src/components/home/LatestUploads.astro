@@ -1,0 +1,121 @@
+<section class='latest-uploads'>
+  <header>
+    <h2>latest uploads</h2>
+  </header>
+  <div class='content'>
+    <section>
+      <div class='left'>
+        <img src='/files/pdf.svg' alt='pdf image' />
+        <h2>my-file.pdf</h2>
+        <p>ali</p>
+      </div>
+      <div class='right'>
+        <p>2.9mb</p>
+      </div>
+    </section>
+    <section>
+      <div class='left'>
+        <img src='/files/avi.svg' alt='avi image' />
+        <h2>my-video-file.avi</h2>
+        <p>mohsen</p>
+      </div>
+      <div class='right'>
+        <p>4.9mb</p>
+      </div>
+    </section>
+    <section>
+      <div class='left'>
+        <img src='/files/psd.svg' alt='psd image' />
+        <h2>my-file.psd</h2>
+        <p>abdo</p>
+      </div>
+      <div class='right'>
+        <p>4.5mb</p>
+      </div>
+    </section>
+    <section>
+      <div class='left'>
+        <img src='/files/zip.svg' alt='zip image' />
+        <h2>my-file.zip</h2>
+        <p>hamada</p>
+      </div>
+      <div class='right'>
+        <p>8.9mb</p>
+      </div>
+    </section>
+    <section>
+      <div class='left'>
+        <img src='/files/dll.svg' alt='dll image' />
+        <h2>my-file.dll</h2>
+        <p>user</p>
+      </div>
+      <div class='right'>
+        <p>2.9mb</p>
+      </div>
+    </section>
+    <section>
+      <div class='left'>
+        <img src='/files/eps.svg' alt='eps image' />
+        <h2>my-file.eps</h2>
+        <p>designer</p>
+      </div>
+      <div class='right'>
+        <p>8.9mb</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+<style>
+  .latest-uploads {
+    display: grid;
+    gap: 20px;
+  }
+  .latest-uploads > .content {
+    display: inherit;
+    gap: inherit;
+  }
+  .latest-uploads > .content > section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  .latest-uploads > .content > section:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+    height: 1px;
+    background: var(--third-bg);
+  }
+  .latest-uploads > .content > section > .left {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .latest-uploads > .content h2 {
+    font-weight: normal;
+    font-size: 18px;
+  }
+  .latest-uploads > .content > section > .left p {
+    color: var(--second-font-color);
+    text-transform: capitalize;
+    font-family: inherit;
+  }
+  .latest-uploads img {
+    width: 40px;
+    grid-row: 1/3;
+  }
+  .latest-uploads > .content > section > .right {
+    background: var(--third-bg);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+</style>

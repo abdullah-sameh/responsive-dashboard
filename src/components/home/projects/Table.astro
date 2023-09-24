@@ -1,0 +1,171 @@
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>finish date</th>
+      <th>client</th>
+      <th>price</th>
+      <th>team</th>
+      <th>status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Ministry Wikipedia</td>
+      <td>10 May 2022</td>
+      <td>Ministry</td>
+      <td>$5300</td>
+      <td>
+        <img src='/team/team-01.webp' alt='1' />
+        <img src='/team/team-02.webp' alt='2' />
+        <img src='/team/team-03.webp' alt='3' />
+        <img src='/team/team-05.webp' alt='4' />
+      </td>
+      <td>
+        <p class='bg-yellow'>pending</p>
+      </td>
+    </tr>
+    <tr>
+      <td>cafee</td>
+      <td>10 oct 2022</td>
+      <td>mohsen company</td>
+      <td>$1500</td>
+      <td>
+        <img src='/team/team-01.webp' alt='1' />
+        <img src='/team/team-02.webp' alt='2' />
+        <img src='/team/team-03.webp' alt='3' />
+      </td>
+      <td>
+        <p class='bg-blue'>in progress</p>
+      </td>
+    </tr>
+    <tr>
+      <td>bouba shop</td>
+      <td>10 Sep 2021</td>
+      <td>Bouba</td>
+      <td>$800</td>
+      <td>
+        <img src='/team/team-01.webp' alt='1' />
+        <img src='/team/team-02.webp' alt='2' />
+      </td>
+      <td>
+        <p class='bg-green'>completed</p>
+      </td>
+    </tr>
+    <tr>
+      <td>hamoda website</td>
+      <td>10 march 2022</td>
+      <td>hamoda</td>
+      <td>$20</td>
+      <td>
+        <img src='/team/team-01.webp' alt='1' />
+      </td>
+      <td>
+        <p class='bg-green'>completed</p>
+      </td>
+    </tr>
+    <tr>
+      <td>sayed website</td>
+      <td>10 march 2022</td>
+      <td>sayed</td>
+      <td>$50</td>
+      <td>
+        <img src='/team/team-01.webp' alt='1' />
+        <img src='/team/team-02.webp' alt='2' />
+      </td>
+      <td>
+        <p class='bg-red'>rejected</p>
+      </td>
+    </tr>
+    <tr>
+      <td>arena app</td>
+      <td>01 dec 2022</td>
+      <td>arena</td>
+      <td>$1200</td>
+      <td>
+        <img src='/team/team-01.webp' alt='1' />
+        <img src='/team/team-02.webp' alt='2' />
+        <img src='/team/team-03.webp' alt='3' />
+        <img src='/team/team-05.webp' alt='4' />
+      </td>
+      <td>
+        <p class='bg-green'>completed</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  .bg-green,
+  .bg-yellow,
+  .bg-red,
+  .bg-blue {
+    width: fit-content;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+  }
+  td {
+    padding: 10px 20px;
+  }
+  .bg-green {
+    background: var(--green);
+  }
+  .bg-yellow {
+    background: var(--orange);
+  }
+  .bg-red {
+    background: var(--red);
+  }
+  .bg-blue {
+    background: var(--blue);
+  }
+
+  img {
+    width: 40px;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  img:not(:first-child) {
+    margin-left: -20px;
+  }
+  img:hover {
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+    border: 1px solid var(--third-bg);
+  }
+  table thead {
+    background: var(--third-bg);
+  }
+  table thead tr th {
+    text-align: start;
+    padding: 20px;
+    text-transform: capitalize;
+  }
+  @media screen and (max-width: 900px) {
+    table thead tr th {
+      padding: 10px;
+    }
+  }
+  table tbody tr td {
+    padding: 10px 20px;
+    border: 1px solid var(--third-bg);
+    text-transform: capitalize;
+  }
+  table tbody tr:hover td {
+    background: rgb(0 0 0 / 0.015);
+  }
+</style>

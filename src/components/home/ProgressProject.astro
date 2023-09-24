@@ -1,0 +1,81 @@
+<section class='progress-project'>
+  <header>
+    <h2>last project progress</h2>
+  </header>
+  <ul>
+    <li>got the project</li>
+    <li>start the project</li>
+    <li>the project about to finish</li>
+    <li>test the project</li>
+    <li>finish the project & get money</li>
+  </ul>
+</section>
+
+<style>
+  .progress-project {
+    display: grid;
+    align-content: start;
+    gap: 20px;
+    background-image: linear-gradient(
+        rgb(255 255 255 / 0.9),
+        rgb(255 255 255 / 0.9)
+      ),
+      url('./imgs/project.png');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+  .progress-project > ul {
+    display: grid;
+    gap: 30px;
+    position: relative;
+  }
+  .progress-project > ul::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: var(--blue);
+    left: 14px;
+    top: -5px;
+  }
+  .progress-project > ul > li {
+    position: relative;
+    margin-left: 45px;
+    text-transform: capitalize;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+  }
+  .progress-project > ul > li::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--blue);
+    border-radius: 50%;
+    border: 2px solid #fff;
+    outline: 2px solid var(--blue);
+    left: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  .progress-project > ul > li:nth-last-of-type(2):before {
+    animation: pop linear 1s infinite alternate;
+    -webkit-animation: pop linear 1s infinite alternate;
+  }
+  .progress-project > ul > li:last-of-type::before {
+    background: var(--main-bg);
+  }
+  @keyframes pop {
+    0% {
+      background: var(--blue);
+    }
+    100% {
+      background: var(--main-bg);
+    }
+  }
+</style>

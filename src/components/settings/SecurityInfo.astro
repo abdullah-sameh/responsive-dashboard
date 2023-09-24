@@ -1,0 +1,90 @@
+<section class='security-info'>
+  <header>
+    <h2>security info</h2>
+    <p>Security Information About Your Account</p>
+  </header>
+  <div>
+    <div>
+      <h2>password</h2>
+      <p>last change on 25/10/2021</p>
+    </div>
+    <div>
+      <button>change</button>
+    </div>
+  </div>
+  <div>
+    <div>
+      <h2>Two-Factor Authentication</h2>
+      <p>Enable/Disable The Feature</p>
+    </div>
+    <div>
+      <label for='security-checkbtn'>
+        <input
+          checked
+          type='checkbox'
+          name='security-checkbtn'
+          id='security-checkbtn'
+        />
+        <div class='checkbtn-div'></div>
+      </label>
+    </div>
+  </div>
+  <div>
+    <div>
+      <h2>devices</h2>
+      <p>Check The Login Devices List</p>
+    </div>
+    <div>
+      <p>devices</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .security-info {
+    display: grid;
+    gap: 15px;
+  }
+  .security-info > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--third-bg);
+  }
+  .security-info > div:last-child {
+    border: none;
+  }
+  .security-info > div h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .security-info > div p {
+    font-size: 14px;
+    color: var(--second-font-color);
+  }
+  .security-info > div button {
+    background: var(--blue);
+    padding: 4px 10px;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: inherit;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .security-info > div:last-of-type > div:last-child > p:last-of-type {
+    color: var(--main-font-color);
+    background: var(--third-bg);
+    padding: 4px 10px;
+    text-transform: capitalize;
+    font-family: inherit;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+</style>

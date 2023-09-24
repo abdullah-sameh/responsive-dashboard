@@ -1,0 +1,59 @@
+<section class='social-info'>
+  <header>
+    <h2>social info</h2>
+    <p>social media information</p>
+  </header>
+  <div>
+    <i class='fa fa-twitter'></i>
+    <input type='text' placeholder='Twitter Username' />
+  </div>
+  <div>
+    <i class='fa fa-facebook'></i>
+    <input type='text' placeholder='facebook Username' />
+  </div>
+  <div>
+    <i class='fa fa-youtube'></i>
+    <input type='text' placeholder='youtube Username' />
+  </div>
+  <div>
+    <i class='fa fa-linkedin'></i>
+    <input type='text' placeholder='linkedin Username' />
+  </div>
+</section>
+
+<style>
+  .social-info {
+    display: grid;
+    gap: 15px;
+    align-content: start;
+  }
+  .social-info > div {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    border: 1px solid var(--second-font-color);
+    border-radius: 5px;
+    background: #f6f6f6;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  .social-info > div > i {
+    padding: 10px;
+    border-right: 1px solid var(--second-font-color);
+    color: var(--second-font-color);
+    transition: var(--time-trannsition);
+    -webkit-transition: var(--time-trannsition);
+    -moz-transition: var(--time-trannsition);
+    -ms-transition: var(--time-trannsition);
+    -o-transition: var(--time-trannsition);
+  }
+  .social-info > div > input {
+    padding-left: 10px;
+    font-family: inherit;
+    font-size: 16px;
+  }
+  .social-info > div:focus-within > i {
+    color: var(--main-font-color);
+  }
+</style>

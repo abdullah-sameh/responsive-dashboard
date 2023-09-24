@@ -1,0 +1,48 @@
+---
+import Toggle from '../Toggle.astro'
+---
+
+<section class='site-control'>
+  <header>
+    <h2>site control</h2>
+    <p>Control The Website If There Is Maintenance</p>
+  </header>
+  <div>
+    <header class='left'>
+      <h2>website control</h2>
+      <p>open/close website and type the reason</p>
+    </header>
+    <div class='right'>
+      <Toggle />
+    </div>
+  </div>
+  <textarea cols='30' rows='10' placeholder='Close message content'></textarea>
+</section>
+
+<style>
+  .site-control {
+    display: grid;
+    gap: 15px;
+  }
+  .site-control > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-control header p {
+    color: var(--second-font-color);
+  }
+  .site-control > textarea {
+    height: 120px;
+    resize: none;
+    overflow-wrap: break-word;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    padding: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+</style>

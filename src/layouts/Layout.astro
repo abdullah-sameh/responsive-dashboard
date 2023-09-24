@@ -1,0 +1,185 @@
+---
+import LeftNav from '../components/LeftNav.astro'
+import TopNav from '../components/TopNav.astro'
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <!-- font awesome -->
+    <link
+      href='https://fonts.googleapis.com/icon?family=Material+Icons'
+      rel='stylesheet'
+    />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+    />
+    <!-- font google -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700;800&display=swap'
+      rel='stylesheet'
+    />
+
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <LeftNav hover={title} />
+
+    <main>
+      <TopNav />
+
+      <div class='container'>
+        <h2>{title}</h2>
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
+
+<style>
+  h2 {
+    text-transform: capitalize;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    width: max-content;
+    position: relative;
+    padding-bottom: 10px;
+    z-index: 1;
+  }
+  h2::after {
+    content: '';
+    width: 70%;
+    height: 4px;
+    background-color: var(--main-bg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+  }
+  h2::before {
+    content: '';
+    width: 20%;
+    height: 4px;
+    background-color: var(--main-font-color);
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+
+<style is:global>
+  :root {
+    --main-font-color: #000;
+    --second-font-color: #888;
+    --main-bg: #fff;
+    --second-bg: #f1f5f9;
+    --third-bg: #eee;
+    --red: #f44336;
+    --blue: #0075ff;
+    --orange: #f59e0b;
+    --green: #22c55e;
+
+    --time-trannsition: 0.3s;
+    --radius: 10px;
+
+    --max-lines: 1;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  :is(a, ul, li, input, button, textarea) {
+    all: initial;
+  }
+
+  body {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  button:hover {
+    background-image: linear-gradient(
+      rgb(0 0 0 / 0.2),
+      rgb(0 0 0 / 0.2)
+    ) !important;
+    cursor: pointer;
+  }
+
+  .hover {
+    background: #f6f6f6;
+  }
+  main {
+    width: 100%;
+    background: var(--second-bg) !important;
+  }
+  main > * {
+    padding: 20px;
+  }
+  @media only screen and (max-width: 800px) {
+    main > * {
+      padding: 10px;
+    }
+  }
+
+  button {
+    width: fit-content;
+    background: var(--blue);
+    color: #fff;
+    font-family: inherit;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 5px 10px;
+    justify-self: end;
+  }
+
+  .container > section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  section header h2 {
+    padding-bottom: 10px;
+  }
+  section header p {
+    color: var(--second-font-color);
+  }
+
+  section header :is(h2, p) {
+    text-transform: capitalize;
+  }
+
+  .max-lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--max-lines); /* number of lines to show */
+    line-clamp: var(--max-lines);
+    -webkit-box-orient: vertical;
+  }
+
+  .border-radius {
+    border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+  }
+</style>

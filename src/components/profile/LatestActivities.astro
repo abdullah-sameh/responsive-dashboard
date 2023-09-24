@@ -1,0 +1,90 @@
+<section class='latest-activities'>
+  <header>
+    <h2>latest activities</h2>
+    <p>latest activities done by the user</p>
+  </header>
+  <div class='reward'>
+    <img src='activity/activity-01.webp' alt='' />
+    <div>
+      <h2>store</h2>
+      <p>bought the mastering python course</p>
+    </div>
+    <div>
+      <p class='time'>18:10</p>
+      <p class='day'>last week</p>
+    </div>
+  </div>
+  <div class='reward'>
+    <img src='activity/activity-02.webp' alt='' />
+    <div>
+      <h2>academy</h2>
+      <p>got the front-end certificate</p>
+    </div>
+    <div>
+      <p class='time'>16:06</p>
+      <p class='day'>last month</p>
+    </div>
+  </div>
+  <div class='reward'>
+    <img src='activity/activity-03.webp' alt='' />
+    <div>
+      <h2>badges</h2>
+      <p>unlocked the 10 skills badge</p>
+    </div>
+    <div>
+      <p class='time'>18:10</p>
+      <p class='day'>last year</p>
+    </div>
+  </div>
+  <div class='reward'>
+    <img src='activity/activity-01.webp' alt='' />
+    <div>
+      <h2>store</h2>
+      <p>bought the mastering python course</p>
+    </div>
+    <div>
+      <p class='time'>12:10</p>
+      <p class='day'>yesterday</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .latest-activities {
+    grid-column: 2/4;
+  }
+  @media only screen and (min-width: 1050px) and (max-width: 1500px) {
+    .latest-activities {
+      grid-column: 2/3;
+    }
+  }
+  @media only screen and (max-width: 1050px) {
+    .latest-activities {
+      grid-column: 1/2;
+    }
+  }
+  .latest-activities > div {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .latest-activities > div > div {
+    display: grid;
+    align-content: space-between;
+  }
+  .latest-activities > div > div > :is(h2, p) {
+    text-transform: capitalize;
+  }
+  .latest-activities > div > div:last-of-type {
+    flex-grow: 1;
+    text-align: end;
+  }
+  .latest-activities > div > div > p:last-child {
+    color: var(--second-font-color);
+  }
+  .latest-activities > div > img {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+  }
+</style>

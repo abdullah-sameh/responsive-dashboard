@@ -1,0 +1,58 @@
+<section class='latest-post'>
+  <h2>latest post</h2>
+  <div>
+    <img src='/avatar.webp' alt='avatar img' />
+    <h2>abdullah sameh</h2>
+    <p>about 3 hours ago</p>
+  </div>
+  <p>
+    You Can Fool All Of The People Some Of The Time, And Some Of The People All
+    Of The Time, But You Can't Fool All Of The People All Of The Time.
+  </p>
+  <footer>
+    <div class='left'>
+      <i class='material-icons'>favorite</i>
+      <p>1.2k</p>
+    </div>
+    <div class='right'>
+      <i class='material-icons'>forum</i>
+      <p>500</p>
+    </div>
+  </footer>
+</section>
+
+<style>
+  .latest-post {
+    display: grid;
+    gap: 20px;
+  }
+  .latest-post > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 20px;
+  }
+  .latest-post > div > img {
+    width: 50px;
+    grid-row: 1/3;
+  }
+  .latest-post > div > h2 {
+    font-size: 18px;
+  }
+  .latest-post > div > p {
+    color: var(--second-font-color);
+  }
+  .latest-post > p {
+    border-top: 1px solid var(--third-bg);
+    border-bottom: 1px solid var(--third-bg);
+    min-height: 120px;
+    padding: 20px 0;
+  }
+  .latest-post > footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .latest-post > footer > * {
+    display: flex;
+    color: var(--second-font-color);
+  }
+</style>

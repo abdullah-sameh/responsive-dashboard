@@ -1,0 +1,98 @@
+<section class='ticket'>
+  <header>
+    <h2>tickets statics</h2>
+    <p>everything about support tickets</p>
+  </header>
+  <div class='content'>
+    <span>
+      <i class='material-icons'>list_alt</i>
+      <h5>2500</h5>
+      <p>total</p>
+    </span>
+    <span>
+      <i class='material-icons'>sync</i>
+      <h5>500</h5>
+      <p>pending</p>
+    </span>
+    <span>
+      <i class='material-icons'>check</i>
+      <h5>1900</h5>
+      <p>closed</p>
+    </span>
+    <span>
+      <i class='material-icons'>clear</i>
+      <h5>100</h5>
+      <p>deleted</p>
+    </span>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    align-items: start;
+    gap: 20px;
+  }
+  section > p {
+    color: var(--second-font-color);
+    text-transform: capitalize;
+  }
+  section > .content {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+  }
+  section > .content > span {
+    padding: 20px 0;
+    border: 1px solid var(--third-bg);
+    border-radius: 10px;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  @media only screen and (max-width: 400px) {
+    section > .content > span {
+      gap: 0;
+    }
+  }
+  section > .content > span > i {
+    font-size: 35px;
+  }
+  span h5 {
+    font-size: 22px;
+    font-weight: normal;
+  }
+  section > .content > span:nth-of-type(1) > i {
+    color: var(--orange);
+  }
+  section > .content > span:nth-of-type(2) > i {
+    color: var(--blue);
+  }
+  section > .content > span:nth-of-type(3) > i {
+    color: var(--green);
+    border-radius: 50%;
+    outline: 3px solid var(--green);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  section > .content > span:nth-of-type(4) > i {
+    color: var(--red);
+    border-radius: 50%;
+    outline: 3px solid var(--red);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  section > .content > span > p {
+    color: var(--second-font-color);
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+</style>

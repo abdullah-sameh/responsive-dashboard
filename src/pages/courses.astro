@@ -1,0 +1,138 @@
+---
+import { getImage } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+const courses = await Astro.glob('../content/courses/*.md')
+---
+
+<Layout title='courses'>
+  <div class='courses'>
+    {
+      courses.map((course, i) => {
+        return (
+          <section>
+            <img src={`/courses/course-0${i + 1}.webp`} alt='' />
+
+            <img src={`/team/team-0${i + 1}.webp`} alt='' class='team-img' />
+
+            <header>
+              <h2 class='max-lines'>{course.frontmatter.name}</h2>
+              <p class='max-lines' style='--max-lines: 3'>
+                {course.rawContent()}
+              </p>
+            </header>
+
+            <footer>
+              <button>course info</button>
+              <div class='left'>
+                <i class='material-icons'>person</i>
+                <p>{100}</p>
+              </div>
+              <div class='right'>
+                <i class='material-icons'>attach_money</i>
+                <p>{Math.floor(Math.random() * 2001 + 1000)}</p>
+              </div>
+            </footer>
+          </section>
+        )
+      })
+    }
+  </div>
+</Layout>
+
+<style>
+  .courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  @media screen and (max-width: 400px) {
+    .courses {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+
+  section {
+    background-color: var(--main-bg);
+    align-content: start;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    display: grid;
+    border-radius: var(--radius);
+    -webkit-border-radius: var(--radius);
+    -moz-border-radius: var(--radius);
+    -ms-border-radius: var(--radius);
+    -o-border-radius: var(--radius);
+  }
+
+  h2 {
+    text-transform: capitalize;
+    color: var(--main-font-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  p {
+    color: var(--second-font-color);
+    text-transform: capitalize;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  img:first-child {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  .team-img {
+    position: absolute;
+    width: 50px;
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  header {
+    padding: 20px;
+  }
+
+  footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-self: end;
+    padding: 20px;
+    color: var(--second-font-color);
+    border-top: 1px solid var(--third-bg);
+  }
+  button {
+    background: var(--blue);
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: capitalize;
+    font-family: inherit;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+  }
+  footer > * {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+</style>

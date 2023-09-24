@@ -1,0 +1,44 @@
+<section class='skills border-radius'>
+  <header>
+    <h2>my skills</h2>
+    <p>complete skills list</p>
+  </header>
+  <div>
+    <p>html5</p>
+    <p>css3</p>
+    <p>JavaScript</p>
+    <p>TypeScript</p>
+  </div>
+  <div>
+    <p>reactJs</p>
+    <p>learning linux</p>
+  </div>
+  <div>
+    <p>astro</p>
+    <p>react-hook-forms</p>
+  </div>
+</section>
+
+<style>
+  .skills {
+    display: grid;
+    align-content: start;
+  }
+  .skills > div {
+    display: flex;
+    padding: 10px 0;
+  }
+  .skills > div:not(:last-of-type) {
+    border-bottom: 1px solid var(--third-bg);
+  }
+  .skills > div > p {
+    padding: 5px 10px;
+    background: var(--second-bg);
+    border-radius: 5px;
+    margin-right: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+</style>

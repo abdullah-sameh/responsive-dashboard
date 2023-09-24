@@ -1,0 +1,78 @@
+<section class='latest-news'>
+  <header><h2>latest news</h2></header>
+  <div class='content'>
+    <section>
+      <img class='border-radius' src='/news/news-01.webp' alt='new1' />
+      <h2>created SASS section</h2>
+      <p>new SASS examples & tutorial</p>
+      <p class='border-radius'>3 days ago</p>
+    </section>
+    <section>
+      <img class='border-radius' src='/news/news-02.webp' alt='new2' />
+      <h2>changed the design</h2>
+      <p>A Brand New Website Design</p>
+      <p class='border-radius'>5 days ago</p>
+    </section>
+    <section>
+      <img class='border-radius' src='/news/news-03.webp' alt='new3' />
+      <h2>Team Increased</h2>
+      <p>3 Developers Joined The Team</p>
+      <p class='border-radius'>7 days ago</p>
+    </section>
+    <section>
+      <img class='border-radius' src='/news/news-04.webp' alt='new4' />
+      <h2>Added Payment Gateway</h2>
+      <p>Many New Payment Gateways Added</p>
+      <p class='border-radius'>9 days ago</p>
+    </section>
+  </div>
+</section>
+
+<style>
+  .latest-news {
+    display: grid;
+    gap: 20px;
+  }
+  .latest-news > .content > section {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    padding: 20px 0;
+  }
+  .latest-news img {
+    width: 100px;
+    grid-row: 1/3;
+  }
+  .latest-news > .content > section:not(:last-of-type) {
+    border-bottom: 1px solid var(--third-bg);
+  }
+  .latest-news > .content > section > h2 {
+    font-size: 16px;
+    text-transform: capitalize;
+  }
+  .latest-news > .content > section > p:nth-of-type(1) {
+    grid-column: 2/3;
+    color: var(--second-font-color);
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+  .latest-news > .content > section > p:nth-of-type(2) {
+    margin-top: -20px;
+    font-size: 14px;
+    background: var(--third-bg);
+    height: fit-content;
+    padding: 5px 10px;
+    text-transform: capitalize;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .latest-news > .content > section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .latest-news > .content > section > * {
+      margin: 0 !important;
+    }
+  }
+</style>

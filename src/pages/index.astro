@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Welcome from '../components/home/Welcome.astro'
+import Quik from '../components/home/Quik.astro'
+import Yearly from '../components/home/Yearly.astro'
+import Tickets from '../components/home/Tickets.astro'
+import LatestNews from '../components/home/LatestNews.astro'
+import LatestTasks from '../components/home/LatestTasks.astro'
+import SearchItems from '../components/home/SearchItems.astro'
+import LatestUploads from '../components/home/LatestUploads.astro'
+import ProgressProject from '../components/home/ProgressProject.astro'
+import Reminder from '../components/home/Reminder.astro'
+import LatestPosts from '../components/home/LatestPosts.astro'
+import Social from '../components/home/Social.astro'
+import Projects from '../components/home/projects/Projects.astro'
+---
+
+<Layout title='dashboard'>
+  <div class='container'>
+    <Welcome />
+    <Quik />
+    <Yearly />
+    <Tickets />
+    <LatestNews />
+    <LatestTasks />
+    <SearchItems />
+    <LatestUploads />
+    <ProgressProject />
+    <Reminder />
+    <LatestPosts />
+    <Social />
+    <Projects />
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 20px;
+  }
+  @media only screen and (max-width: 600px) {
+    .container {
+      grid-template-columns: minmax(100px, 1fr) !important;
+    }
+  }
+</style>

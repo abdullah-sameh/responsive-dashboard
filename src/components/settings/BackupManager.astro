@@ -1,0 +1,124 @@
+<section class='backup-manager'>
+  <header>
+    <h2>backup manager</h2>
+    <p>control backup time and location</p>
+  </header>
+
+  <input type='radio' name='backup' id='daily' checked />
+  <label for='daily'>daily</label>
+
+  <input type='radio' name='backup' id='weekly' />
+  <label for='weekly'>weekly</label>
+
+  <input type='radio' name='backup' id='monthly' />
+  <label for='monthly'>monthly</label>
+
+  <footer>
+    <input type='radio' name='footer-backup' id='one' />
+    <label for='one'>
+      <i class='material-icons'>dns</i>
+       megaman
+    </label>
+    <input type='radio' name='footer-backup' id='two' checked />
+    <label for='two'>
+      <i class='material-icons'>dns</i>
+       zero
+    </label>
+    <input type='radio' name='footer-backup' id='three' />
+    <label for='three'>
+      <i class='material-icons'>dns</i>
+       sigma
+    </label>
+  </footer>
+</section>
+
+<style>
+  .backup-manager {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+  }
+  .backup-manager > header {
+    grid-column: 1/3;
+  }
+  .backup-manager > input {
+    grid-column: 1/2;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid var(--main-bg);
+    outline: 2px solid var(--main-font-color);
+    overflow: hidden;
+    position: relative;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  .backup-manager > input::before {
+    content: '';
+    background: var(--blue);
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  .backup-manager > input:checked {
+    outline-color: var(--blue);
+  }
+  .backup-manager > input:checked::before {
+    width: 100%;
+    height: 100%;
+  }
+  .backup-manager > label {
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  .backup-manager > footer {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc((100% / 3) - 10px));
+    gap: 10px;
+    grid-column: 1/3;
+  }
+  .backup-manager > footer > label {
+    padding: 10px 0;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .backup-manager > footer > input {
+    display: none;
+  }
+  .backup-manager > footer > input:checked + label {
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+</style>

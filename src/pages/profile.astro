@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/profile/Hero.astro'
+import Skills from '../components/profile/Skills.astro'
+import LatestActivities from '../components/profile/LatestActivities.astro'
+---
+
+<Layout title='profile'>
+  <div class='container'>
+    <Hero />
+    <Skills />
+    <LatestActivities />
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+  }
+</style>

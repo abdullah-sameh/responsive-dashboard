@@ -1,0 +1,65 @@
+<nav>
+  <div class='search-box border-radius'>
+    <i class='material-icons'>search</i>
+    <input type='search' placeholder='Type A Keyword' />
+  </div>
+  <div class='right'>
+    <i class='material-icons'>notifications</i>
+    <img src='/avatar.webp' alt='' />
+  </div>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--main-bg);
+  }
+  nav .search-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    border: 1px solid var(--second-font-color);
+    padding: 5px;
+    width: 200px;
+  }
+  nav .search-box:focus-visible {
+    width: 250px;
+  }
+  nav input {
+    font-family: inherit;
+    font-size: 14px;
+    width: 100%;
+  }
+  nav .search-box > i {
+    color: var(--second-font-color);
+    font-size: 20px;
+  }
+  nav > .right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  nav > .right > i {
+    position: relative;
+    cursor: pointer;
+  }
+  nav > .right > i::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    position: absolute;
+    right: 0;
+    top: -5px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+  nav img {
+    width: 30px;
+  }
+</style>

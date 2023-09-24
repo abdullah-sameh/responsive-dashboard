@@ -1,0 +1,158 @@
+<section>
+  <header>
+    <h2>yearly target</h2>
+    <p>target of the year</p>
+  </header>
+  <div>
+    <i class='material-icons'>attach_money</i>
+    <h2>money</h2>
+    <p>$20.000</p>
+    <progress value='.8'></progress>
+  </div>
+  <div>
+    <i class='material-icons'>code</i>
+    <h2>projects</h2>
+    <p>30</p>
+    <progress value='.55'></progress>
+  </div>
+  <div>
+    <i class='material-icons'>person</i>
+    <h2>team</h2>
+    <p>12</p>
+    <progress value='.75'></progress>
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    gap: 20px;
+    text-transform: capitalize;
+    padding: 20px;
+  }
+  @media screen and (max-width: 300px) {
+    section {
+      padding: 10px;
+    }
+  }
+  section > p {
+    color: var(--second-font-color);
+    font-size: 14px;
+  }
+  section > div {
+    display: grid;
+    grid-template-columns: 80px auto;
+    gap: 0 20px;
+  }
+  section > div > i {
+    grid-row: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
+  @media only screen and (max-width: 400px) {
+    section > div {
+      grid-template-columns: 50px auto;
+      gap: 0 10px;
+    }
+    section > div > i {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  section > div > i,
+  section > div > progress::-webkit-progress-bar {
+    background-image: linear-gradient(
+      rgb(255 255 255 / 0.8),
+      rgb(255 255 255 / 0.8)
+    );
+  }
+  section > div:nth-of-type(1) > i {
+    color: var(--blue);
+    background-color: var(--blue);
+  }
+  section > div:nth-of-type(2) > i {
+    color: var(--orange);
+    background-color: var(--orange);
+  }
+  section > div:nth-of-type(3) > i {
+    color: var(--green);
+    background-color: var(--green);
+  }
+  section > div > h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--second-font-color);
+  }
+  section > div > p {
+    color: var(--main-font-color);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  section > div > progress {
+    width: 100%;
+    border-radius: 0;
+    height: 5px;
+    position: relative;
+  }
+  section > div:nth-of-type(1) > progress::-webkit-progress-bar,
+  section > div:nth-of-type(1) > progress::-webkit-progress-value {
+    background-color: var(--blue);
+  }
+  section > div:nth-of-type(2) > progress::-webkit-progress-bar,
+  section > div:nth-of-type(2) > progress::-webkit-progress-value {
+    background-color: var(--orange);
+  }
+  section > div:nth-of-type(3) > progress::-webkit-progress-bar,
+  section > div:nth-of-type(3) > progress::-webkit-progress-value {
+    background-color: var(--green);
+  }
+  section > div > progress::before {
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+    width: 25px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  section > div > progress::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    border: 5px solid transparent;
+  }
+  section > div:nth-of-type(1) > progress::before {
+    content: '80%';
+    left: calc(80% - 20px);
+    background: var(--blue);
+  }
+  section > div:nth-of-type(1) > progress::after {
+    left: calc(80% - 7.5px);
+    border-color: var(--blue) transparent transparent transparent;
+  }
+  section > div:nth-of-type(2) > progress::before {
+    content: '55%';
+    left: calc(55% - 20px);
+    background: var(--orange);
+  }
+  section > div:nth-of-type(2) > progress::after {
+    left: calc(55% - 7.5px);
+    border-color: var(--orange) transparent transparent transparent;
+  }
+  section > div:nth-of-type(3) > progress::before {
+    content: '75%';
+    left: calc(75% - 20px);
+    background: var(--green);
+  }
+  section > div:nth-of-type(3) > progress::after {
+    left: calc(75% - 7.5px);
+    border-color: var(--green) transparent transparent transparent;
+  }
+</style>
