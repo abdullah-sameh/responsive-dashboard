@@ -97,6 +97,11 @@ import * as plans from '../content/plans.md'
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   }
+  @media (max-width: 700px) {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+  }
   section > header {
     border: 2px solid var(--main-bg);
     display: grid;

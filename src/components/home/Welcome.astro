@@ -9,7 +9,9 @@
     </div>
   </header>
 
-  <img src='/avatar.webp' alt='' />
+  <div class='img'>
+    <img src='/avatar.webp' alt='' />
+  </div>
 
   <section>
     <div>
@@ -48,10 +50,19 @@
     color: var(--second-font-color);
     text-transform: capitalize;
   }
+  div.img {
+    display: flex;
+    flex-direction: row;
+  }
+  @media screen and (max-width: 600px) {
+    div.img {
+      flex-direction: row-reverse;
+    }
+  }
   header img:nth-child(1) {
     width: 200px;
   }
-  img:nth-child(2) {
+  .img img {
     width: 70px;
     border: 4px solid var(--main-bg);
     margin-top: -35px;
@@ -62,7 +73,7 @@
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
   }
-  img + section {
+  .img + section {
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -72,12 +83,12 @@
     border-bottom: 1px solid var(--third-bg);
     margin: 20px 0;
   }
-  img + section h2 {
+  .img + section h2 {
     font-size: 18px;
     font-weight: normal;
     text-transform: capitalize;
   }
-  img + section p {
+  .img + section p {
     color: var(--second-font-color);
   }
   button {
